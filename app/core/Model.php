@@ -6,7 +6,7 @@ class Model
 
     public function __construct()
     {
-        //use port 8889 on a mac
+        //use port 8889 on a mac (db name = misc)
         $dsn = 'mysql:host=localhost;port=3306;dbname=misc;charset=utf8mb4';
         $username = 'root';
         $password = 'root';
