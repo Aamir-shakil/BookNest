@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Allow access to existing files and directories (e.g., CSS, JS, images)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirect all other requests to index.php, capturing the requested path
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]

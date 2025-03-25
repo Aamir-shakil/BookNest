@@ -1,0 +1,17 @@
+Configure virtual host in your local config: 
+
+UwAmp\bin\apache\conf\httpd_uwamp.conf
+
+
+Add the contents below to the end of file name above and save. Then open http://localhost:3000
+
+<VirtualHost *:3000>
+#UWAMP Generate Virtual Host
+	DocumentRoot "{DOCUMENTPATH}/members_area_mvc/public"
+	ServerName "members.local"
+	<Directory "{DOCUMENTPATH}/members_area_mvc/public">
+		Options +Indexes +Includes +FollowSymLinks +MultiViews
+		AllowOverride All
+		Require all granted
+	</Directory>
+</VirtualHost>
