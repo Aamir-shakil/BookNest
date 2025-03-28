@@ -9,15 +9,6 @@
 
 <body>
     <h1>Browse Books</h1>
-    <div class="book-list">
-        <?php foreach ($data['books'] as $book): ?>
-            <div class="book-item">
-                <h2><?php echo htmlspecialchars($book['title']); ?></h2>
-                <p>Author: <?php echo htmlspecialchars($book['author']); ?></p>
-                <p>Price: $<?php echo htmlspecialchars($book['price']); ?></p>
-            </div>
-        <?php endforeach; ?>
-    </div>
     <form method="GET" action="/books">
         <input type="text" name="query" placeholder="Search books..."
             value="<?= isset($_GET['query']) ? htmlspecialchars($_GET['query']) : '' ?>">
@@ -30,6 +21,16 @@
         </select>
         <button type="submit">Search</button>
     </form>
+    <div class="book-list">
+        <?php foreach ($data['books'] as $book): ?>
+            <div class="book-item">
+                <h2><?php echo htmlspecialchars($book['title']); ?></h2>
+                <p>Author: <?php echo htmlspecialchars($book['author']); ?></p>
+                <p>Price: $<?php echo htmlspecialchars($book['price']); ?></p>
+            </div>
+        <?php endforeach; ?>
+    </div>
+
 
 
 </body>
