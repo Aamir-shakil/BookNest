@@ -11,6 +11,8 @@
     <h2>Welcome, <?= htmlspecialchars($data['user']) ?>!</h2>
     <p>You are now logged in.</p>
     <a href="/login/logout">Logout</a>
+     <!-- Link to Books Page -->
+     <p><a href="/books">Browse Books</a></p>
 </body>
 
 </html>
