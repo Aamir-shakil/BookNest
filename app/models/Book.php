@@ -7,7 +7,7 @@ class Book extends Model{
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     public function searchBooks($query, $filter) {
-      $sql = "SELECT * FROM books";
+      $sql = "SELECT * FROM books WHERE 1=1"; // preventing Where conflicts
       $params = [];
 
       if (!empty($query)) {
