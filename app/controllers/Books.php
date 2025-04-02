@@ -4,17 +4,17 @@ class Books extends Controller
 
     public function index()
     {
-        require_once '../app/models/Book.php';
-        $bookModel = new Book();
-
-        // Get search parameters
+        $bookModel = $this->model('Book'); // Load the Book model
         $query = isset($_GET['query']) ? trim($_GET['query']) : '';
         $filter = isset($_GET['filter']) ? $_GET['filter'] : '';
 
-        // Fetch books based on search query
-        $books = $bookModel->searchBooks($query, $filter);
+        if (!empty($query)) {
+            $books = $bookModel->searchBooks($query, $filter);
+        } else {
+            $books = []; // Empty array when no search is performed
+        }
 
-        require_once '../app/views/books/index.php';
+        $this->view('books/index', ['books' => $books]);
     }
 }
 
