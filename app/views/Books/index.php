@@ -11,9 +11,11 @@
 <body>
     <h1>Browse Books</h1>
     <form method="GET" action="/books">
-        <input type="text" name="query" placeholder="Search books..."
+        <label for="query">Search:</label>
+        <input type="text" id="query" name="query" placeholder="Search books..."
             value="<?= isset($_GET['query']) ? htmlspecialchars($_GET['query']) : '' ?>">
-        <select name="filter">
+        <label id="filter" for="filter">Filter by:</label>
+        <select id = "filter" name="filter">
             <option value="">All</option>
             <option value="title" <?= (isset($_GET['filter']) && $_GET['filter'] === 'title') ? 'selected' : '' ?>>Title
             </option>
