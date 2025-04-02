@@ -22,17 +22,7 @@
         <button type="submit">Search</button>
     </form>
     <div class="book-list">
-        <?php if (!empty($books)): ?>
-            <?php foreach ($books as $book): ?>
-                <div class="book-item">
-                    <h2><?php echo htmlspecialchars($book['title']); ?></h2>
-                    <p>Author: <?php echo htmlspecialchars($book['author']); ?></p>
-                    <p>Price: $<?php echo htmlspecialchars($book['price']); ?></p>
-                </div>
-            <?php endforeach; ?>
-        <?php else: ?>
-            <p>No books found.</p>
-        <?php endif; ?>
+        
     </div>
     
     
