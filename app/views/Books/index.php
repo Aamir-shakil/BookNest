@@ -31,7 +31,7 @@
     
     
     
-    <!-- <div class="book-list">
+    <div class="book-list">
         <?php foreach ($data['books'] as $book): ?>
             <div class="book-item">
                 <h2><?php echo htmlspecialchars($book['title']); ?></h2>
@@ -39,7 +39,7 @@
                 <p>Price: $<?php echo htmlspecialchars($book['price']); ?></p>
             </div>
         <?php endforeach; ?>
-    </div> -->
+    </div>
 
 
 
