@@ -3,14 +3,15 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f9;
-    color: #333;
+    color: #111111;/* Darker text added for better readability*/
 }
 
 h1 {
     text-align: center;
     margin-top: 20px;
-    color: #444;
+    color: #111111;/* Darker text added for better readability*/
 }
+
 
 /* Form Styles */
 form {
@@ -42,12 +43,13 @@ form select {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+    border: 1px solid #555555; /* Darker border */
 }
 
 form button {
     padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
+    background-color: #0056b3; /* Dark blue for high contrast */
+    color: #ffffff; /* White text */
     border: none;
     border-radius: 5px;
     font-size: 16px;
@@ -85,17 +87,17 @@ form button:hover {
 
 .book-item h2 {
     font-size: 18px;
-    color: #007bff;
+    color: #0056b3; /* Dark blue for high contrast */
     margin-bottom: 10px;
 }
 
 .book-item p {
     font-size: 14px;
-    color: #555;
+    color: #333333; /* Darker text for better readability */
     margin: 5px 0;
 }
 
 .book-item p:last-child {
     font-weight: bold;
-    color: #333;
+    color: #111111; /* Very dark text for price */
 }
