@@ -37,7 +37,7 @@
             <div class="book-item">
                 <h2><?php echo htmlspecialchars($book['title']); ?></h2>
                 <p>Author: <?php echo htmlspecialchars($book['author']); ?></p>
-                <p>Price: $<?php echo htmlspecialchars($book['price']); ?></p>
+                <p>Price: £<?php echo htmlspecialchars($book['price']); ?></p>
             </div>
         <?php endforeach; ?>
     </div>
