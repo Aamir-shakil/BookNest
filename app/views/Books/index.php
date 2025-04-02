@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +14,7 @@
         <input type="text" id="query" name="query" placeholder="Search books..."
             value="<?= isset($_GET['query']) ? htmlspecialchars($_GET['query']) : '' ?>">
         <label id="filter" for="filter">Filter by:</label>
-        <select id = "filter" name="filter">
+        <select id="filter" name="filter">
             <option value="">All</option>
             <option value="title" <?= (isset($_GET['filter']) && $_GET['filter'] === 'title') ? 'selected' : '' ?>>Title
             </option>
@@ -25,16 +24,6 @@
         <button type="submit">Search</button>
     </form>
     <div class="book-list">
-        
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    <div class="book-list">
         <?php foreach ($data['books'] as $book): ?>
             <div class="book-item">
                 <h2><?php echo htmlspecialchars($book['title']); ?></h2>
@@ -43,9 +32,5 @@
             </div>
         <?php endforeach; ?>
     </div>
-
-
-
 </body>
-
 </html>
