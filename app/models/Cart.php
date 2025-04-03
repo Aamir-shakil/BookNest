@@ -1,5 +1,4 @@
 <?php
-session_start();
 class Cart extends Model {
       // Add book to cart
       public function addToCart($userId, $bookId) {

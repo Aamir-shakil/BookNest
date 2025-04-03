@@ -9,6 +9,11 @@
 
 <body>
     <h1>Browse Books</h1>
+    <!-- Display Cart Success Message -->
+    <?php if (isset($_SESSION['cart_message'])): ?>
+        <p  style="color: green; text-align: center; margin-top: 10px; font-size: 16px; font-weight: bold;"><?= $_SESSION['cart_message']; ?></p>
+        <?php unset($_SESSION['cart_message']); // Clear message after showing ?>
+    <?php endif; ?>
     <form method="GET" action="/books">
         <label for="query">Search:</label>
         <input type="text" id="query" name="query" placeholder="Search books..."

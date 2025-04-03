@@ -1,4 +1,5 @@
 <?php
+require_once '../app/models/Cart.php';
 class Books extends Controller
 {
 
@@ -17,7 +18,6 @@ class Books extends Controller
         $this->view('books/index', ['books' => $books]);
     }
     public function addToCart($bookId) {
-        session_start();
         if (!isset($_SESSION['user_id'])) {
             header("Location: /login"); // Redirect to login if not logged in
             exit;
@@ -26,6 +26,7 @@ class Books extends Controller
 
         $cart = new Cart();
         $cart->addToCart($userId, $bookId);
+        $_SESSION['cart_message'] = "Book added to cart successfully!";
 
         header("Location: /books");
         exit;
