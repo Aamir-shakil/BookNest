@@ -29,6 +29,7 @@
                 <h2><?php echo htmlspecialchars($book['title']); ?></h2>
                 <p>Author: <?php echo htmlspecialchars($book['author']); ?></p>
                 <p>Price: £<?php echo htmlspecialchars($book['price']); ?></p>
+                <a href="/books/addToCart/<?= $book['id'] ?>">Add to Cart</a> <!--Add to cart Button-->
             </div>
         <?php endforeach; ?>
     </div>
