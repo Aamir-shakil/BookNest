@@ -27,6 +27,9 @@
             </option>
         </select>
         <button type="submit">Search</button>
+        <p>
+            <a href="/Cart">My Cart</a> 
+        </p>
     </form>
     <div class="book-list">
         <?php foreach ($data['books'] as $book): ?>
