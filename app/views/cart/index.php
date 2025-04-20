@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Cart</title>
+    <title>My Cart</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
-    <h1>Your Cart</h1>
-    <?php if (empty($data['cartItems'])): ?>
-        <p>Your cart is empty.</p>
-    <?php else: ?>
-        <ul>
-            <?php foreach ($data['cartItems'] as $item): ?>
-                <li>
-                    <?= htmlspecialchars($item['title']) ?> - $<?= htmlspecialchars($item['price']) ?> 
-                    (Quantity: <?= htmlspecialchars($item['quantity']) ?>)
-                    <a href="/books/removeFromCart/<?= $item['id'] ?>">Remove</a>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-        <a href="/books/checkout">Proceed to Checkout</a>
-    <?php endif; ?>
+    <div class="container">
+        <h1>My Cart</h1>
+
+        <?php if (!empty($cartItems)): ?>
+            <ul>
+                <?php foreach ($cartItems as $item): ?>
+                    <li>
+                        <strong><?= htmlspecialchars($item['book_title']) ?></strong> - 
+                        <?= htmlspecialchars($item['quantity']) ?> x 
+                        $<?= htmlspecialchars($item['price']) ?>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        <?php else: ?>
+            <p>Your cart is empty.</p>
+        <?php endif; ?>
+
+        <a href="/books">Continue Shopping</a>
+        <a href="/checkout">Proceed to Checkout</a>
+    </div>
 </body>
+
 </html>

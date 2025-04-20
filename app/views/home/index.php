@@ -9,7 +9,12 @@
 </head>
 
 <body>
-    <h1>Welcome to the <?= $data['title'] ?> Page!</h1>
+    <div class="container">
+        <h1>Welcome to the <?= $data['title'] ?> Page!</h1>
+        <p>
+            <a href="/register">Register</a> |
+            <a href="/login">Login</a>
+        </p>
+    </div>
 </body>
-
 </html>
