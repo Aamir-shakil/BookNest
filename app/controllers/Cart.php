@@ -13,10 +13,11 @@ class Cart extends Controller
             exit;
         }
 
-        // Fetch cart items from the database using the inherited $db property
-        $cartItems = $this->db->prepare("SELECT * FROM cart WHERE user_id = ?");
-        $cartItems->execute([$userId]);
-        $cartItems = $cartItems->fetchAll();
+        // Load the Cart model
+        $cartModel = $this->model('CartModel');
+
+        // Fetch cart items from the model
+        $cartItems = $cartModel->getUserCart($userId);
 
         // Pass cart items to the view
         $this->view('cart/index', ['cartItems' => $cartItems]);
