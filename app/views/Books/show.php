@@ -25,7 +25,11 @@
                 <li>
                     <strong><?= htmlspecialchars($review['user_name']) ?>:</strong>
                     <?= htmlspecialchars($review['review_text']) ?>
-                    - Rated <?= $review['rating'] ?>/5
+                    -
+                    <?php for ($i = 0; $i < (int) $review['rating']; $i++): ?>
+                        ⭐
+                    <?php endfor; ?>
+                    (<?= $review['rating'] ?>/5)
                 </li>
             <?php endforeach; ?>
         </ul>

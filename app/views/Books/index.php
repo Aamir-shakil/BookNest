@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +10,17 @@
 
 <body>
     <h1>Browse Books</h1>
+    <!-- Display Review Success Message -->
+    <?php if (isset($_SESSION['review_success'])): ?>
+        <p style="color: green; text-align: center; margin-top: 10px; font-size: 16px; font-weight: bold;">
+            <?= $_SESSION['review_success']; ?>
+        </p>
+        <?php unset($_SESSION['review_success']); // Clear message after showing ?>
+    <?php endif; ?>
     <!-- Display Cart Success Message -->
     <?php if (isset($_SESSION['cart_message'])): ?>
-        <p  style="color: green; text-align: center; margin-top: 10px; font-size: 16px; font-weight: bold;"><?= $_SESSION['cart_message']; ?></p>
+        <p style="color: green; text-align: center; margin-top: 10px; font-size: 16px; font-weight: bold;">
+            <?= $_SESSION['cart_message']; ?></p>
         <?php unset($_SESSION['cart_message']); // Clear message after showing ?>
     <?php endif; ?>
     <form method="GET" action="/books">
@@ -28,7 +37,7 @@
         </select>
         <button type="submit">Search</button>
         <p>
-            <a href="/Cart">My Cart</a> 
+            <a href="/Cart">My Cart</a>
         </p>
     </form>
     <div class="book-list">
@@ -43,4 +52,5 @@
         <?php endforeach; ?>
     </div>
 </body>
+
 </html>
