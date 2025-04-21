@@ -28,4 +28,8 @@ class Cart extends Controller
         // Pass cart items to the view
         $this->view('cart/index', ['cartItems' => $cartItems]);
     }
+    public function checkout()
+{
+    $this->view('cart/checkout');
+}
 }

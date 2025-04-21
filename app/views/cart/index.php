@@ -30,7 +30,7 @@ $cartItems = $data['cartItems'];
         <?php endif; ?>
 
         <a href="/books">Continue Shopping</a>
-        <a href="/checkout">Proceed to Checkout</a>
+        <a href="/cart/checkout">Proceed to Checkout</a>
     </div>
 </body>
 
