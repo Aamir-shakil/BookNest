@@ -20,6 +20,8 @@ class Login extends Controller
             if ($user) {
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['user_name'] = $user['name'];
+                $_SESSION['is_admin'] = $user['is_admin'];
+                $userModel->setActiveStatus($user['id'], 1); // Set user as active
                 header('Location: /dashboard'); // Redirect to the members area
                 exit;
             } else {
@@ -30,6 +32,11 @@ class Login extends Controller
 
     public function logout()
     {
+        if (isset($_SESSION['user_id'])) {
+            $userModel = $this->model('User');
+            $userModel->setActiveStatus($_SESSION['user_id'], 0);
+        }
+    
         session_destroy();
         header('Location: /login');
         exit;

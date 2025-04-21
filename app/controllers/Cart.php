@@ -13,11 +13,17 @@ class Cart extends Controller
             exit;
         }
 
+        // Debugging: Log the user ID
+        error_log("User ID: " . $userId);
+
         // Load the Cart model
         $cartModel = $this->model('CartModel');
 
         // Fetch cart items from the model
         $cartItems = $cartModel->getUserCart($userId);
+
+        // Debugging: Log the cart items
+        error_log("Cart Items: " . print_r($cartItems, true));
 
         // Pass cart items to the view
         $this->view('cart/index', ['cartItems' => $cartItems]);

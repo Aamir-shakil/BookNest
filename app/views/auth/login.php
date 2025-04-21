@@ -11,6 +11,13 @@
 <body>
     <div class="container">
         <h1>Login</h1>
+        <?php if (isset($_SESSION['error_message'])): ?>
+            <div
+                style="background-color: #f8d7da; color: #721c24; padding: 10px; margin-bottom: 15px; border: 1px solid #f5c6cb;">
+                <?= htmlspecialchars($_SESSION['error_message']) ?>
+            </div>
+            <?php unset($_SESSION['error_message']); ?>
+        <?php endif; ?>
 
         <?php if (!empty($data['error'])): ?>
             <p style="color: red;"><?= htmlspecialchars($data['error']) ?></p>

@@ -20,13 +20,18 @@ class CartModel extends Model {
      // Get the user's cart items
      public function getUserCart($userId) {
         $stmt = $this->db->prepare("
-            SELECT books.id, books.title, books.price, cart.quantity 
+            SELECT cart.book_id, books.title AS book_title, books.price, cart.quantity 
             FROM cart 
             JOIN books ON cart.book_id = books.id 
             WHERE cart.user_id = ?
         ");
         $stmt->execute([$userId]);
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // Debugging: Log the result
+        error_log(print_r($result, true));
+
+        return $result;
     }
 
     // Remove book from cart

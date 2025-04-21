@@ -51,4 +51,12 @@ class User extends Model
         $stmt->bindParam(":password", $hashedPassword);
         return $stmt->execute();
     }
+    public function setActiveStatus($id, $status)
+{
+    $stmt = $this->db->prepare("UPDATE users SET is_active = :status WHERE id = :id");
+    $stmt->execute([
+        'status' => $status,
+        'id' => $id
+    ]);
+}
 }

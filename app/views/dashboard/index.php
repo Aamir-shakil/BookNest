@@ -14,6 +14,7 @@
         <p>You are now logged in.</p>
         <a href="/login/logout">Logout</a>
         <p><a href="/books">Browse Books</a></p>
+        <p><a href="/admin">Administrator Panel</a></p>
     </div>
 </body>
 
