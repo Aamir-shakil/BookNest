@@ -64,5 +64,20 @@ class Books extends Controller
         $data['message'] = $message;
         $this->view('cart/checkout', $data);
     }
+    public function show($id)
+    {
+        $bookModel = $this->model('Book');
+        $reviewModel = $this->model('Review');
+
+        $book = $bookModel->getBookById($id); // NOT calling view()
+        $reviews = $reviewModel->getReviewsByBook($id);
+        $averageRating = $reviewModel->getAverageRating($id);
+
+        $this->view('books/show', [
+            'book' => $book,
+            'reviews' => $reviews,
+            'averageRating' => $averageRating
+        ]);
+    }
 }
 ?>
