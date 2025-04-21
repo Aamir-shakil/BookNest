@@ -1,3 +1,6 @@
+<?php
+$cartItems = $data['cartItems']; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
