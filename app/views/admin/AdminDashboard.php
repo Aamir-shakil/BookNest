@@ -12,6 +12,7 @@
     <a href="/admin/books">📚 Manage Books</a>
     <a href="/admin/users">👤 Manage Users</a>
     <a href="/logout" style="background: #dc3545;">🚪 Logout</a>
+    <p><a href="/adminreview">📝 Manage Reviews</a></p>
 </div>
 
 </body>

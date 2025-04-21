@@ -26,5 +26,23 @@ class Review extends Model
         $stmt->execute([':book_id' => $bookId]);
         return $stmt->fetch(PDO::FETCH_ASSOC)['average_rating'];
     }
+
+    public function getAllReviews()
+{
+    $stmt = $this->db->prepare('SELECT reviews.*, users.name AS user_name, books.title AS book_title 
+                                FROM reviews 
+                                JOIN users ON reviews.user_id = users.id 
+                                JOIN books ON reviews.book_id = books.id 
+                                ORDER BY reviews.created_at DESC');
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+// Delete a review by ID
+public function deleteReview($id)
+{
+    $stmt = $this->db->prepare('DELETE FROM reviews WHERE id = :id');
+    return $stmt->execute(['id' => $id]);
+}
 }
 ?>
