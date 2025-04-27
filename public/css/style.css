@@ -17,7 +17,7 @@ h1 {
 
 /* Links */
 a {
-    color: #007bff;
+    color: #002147;
     text-decoration: none;
 }
 
@@ -38,7 +38,7 @@ a:hover {
 
 /* Buttons */
 button {
-    background-color: #007bff;
+    background-color: #002147;
     color: #fff;
     border: none;
     padding: 10px 15px;
@@ -47,7 +47,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #002147;
 }
 
 /* Form Styles */
@@ -76,7 +76,7 @@ form select {
 
 form button {
     padding: 10px 20px;
-    background-color: #0056b3; /* Dark blue for high contrast */
+    background-color: #002147; /* Dark blue for high contrast */
     color: #ffffff; /* White text */
     border: none;
     border-radius: 5px;
@@ -86,7 +86,7 @@ form button {
 }
 
 form button:hover {
-    background-color: #0056b3;
+    background-color: #002147;
 }
 
 .book-list {
@@ -115,7 +115,7 @@ form button:hover {
 
 .book-item h2 {
     font-size: 18px;
-    color: #0056b3; /* Dark blue for high contrast */
+    color: #002147; /* Dark blue for high contrast */
     margin-bottom: 10px;
 }
 
@@ -129,5 +129,7 @@ form button:hover {
     font-weight: bold;
     color: #111111; /* Very dark text for price */
 }
+
+
 
 

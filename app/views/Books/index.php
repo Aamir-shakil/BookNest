@@ -39,6 +39,9 @@
         <p>
             <a href="/Cart">My Cart</a>
         </p>
+        <p>
+            <a href="/dashboard">Dashboard</a>
+        </p>
     </form>
     <div class="book-list">
         <?php foreach ($data['books'] as $book): ?>
