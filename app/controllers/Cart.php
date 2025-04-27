@@ -30,6 +30,13 @@ class Cart extends Controller
     }
     public function checkout()
 {
+    $userId = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
+     // Load the Cart model
+     $cartModel = $this->model('CartModel');
+
+     // Clear the user's cart
+     $cartModel->checkout($userId);
+
     $this->view('cart/checkout');
 }
 }
