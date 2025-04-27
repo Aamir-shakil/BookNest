@@ -1,7 +1,17 @@
 <?php
-
+/**
+ * Admin Controller
+ * 
+ * Handles all admin-related actions such as managing books, users, and displaying the dashboard.
+ * Access is restricted to users with admin privileges.
+ */
 class Admin extends Controller
 {
+    /**
+     * Constructor
+     * 
+     * Ensures that only users with admin privileges can access admin pages.
+     */
     public function __construct()
     {
         if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== 1) {
@@ -14,21 +24,21 @@ class Admin extends Controller
 {
     $this->dashboard();
 }
-
+    //Loads all books and passes them to the view.
     public function books()
     {
         $bookModel = $this->model('AdminBookModel');
         $books = $bookModel->getAllBooks();
         $this->view('admin/books', ['books' => $books]);
     }
-
+    //Loads all users and passes them to the view
     public function users()
     {
         $userModel = $this->model('AdminUserModel');
         $users = $userModel->getAllUsers();
         $this->view('admin/users', ['users' => $users]);
     }
-
+    //Processes POST request to add a new book via AdminBookModel.
     public function addBook()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -39,6 +49,7 @@ class Admin extends Controller
             exit;
         }
     }
+    //dashboard page.
     public function dashboard()
 {
     $this->view('admin/AdminDashboard');
@@ -53,7 +64,7 @@ class Admin extends Controller
             exit;
         }
     }
-
+    //Delete a book function
     public function deleteBook($id)
     {
         $bookModel = $this->model('AdminBookModel');

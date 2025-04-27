@@ -8,6 +8,14 @@ class Login extends Controller
         $this->view('auth/login');
     }
 
+     /**
+     * Authenticate the user.
+     * 
+     * Processes the login form submission:
+     * - Validates user credentials.
+     * - Sets session variables upon successful login.
+     * - Redirects to dashboard if successful, or back to login with an error if failed.
+     */
     public function authenticate()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -29,7 +37,10 @@ class Login extends Controller
             }
         }
     }
-
+/**
+     * Log out the user.
+     * 
+     * Clears the user's session and updates the user's active status*/
     public function logout()
     {
         if (isset($_SESSION['user_id'])) {

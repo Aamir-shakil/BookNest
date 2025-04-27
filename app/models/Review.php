@@ -2,6 +2,8 @@
 
 class Review extends Model
 {
+    //model class for managing reviews in the database
+    //adds a new review, retrieves reviews for a specific book, calculates the average rating for a book, and retrieves all reviews.
     public function addReview($userId, $bookId, $rating, $reviewText)
     {
         $stmt = $this->db->prepare('INSERT INTO reviews (user_id, book_id, rating, review_text) VALUES (:user_id, :book_id, :rating, :review_text)');

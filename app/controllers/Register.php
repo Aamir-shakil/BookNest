@@ -6,7 +6,14 @@ class Register extends Controller
     {
         $this->view('auth/register');
     }
-
+    /*
+     * Process and store a new user registration.
+     * 
+     * - Validates user input fields.
+     * - Ensures passwords match.
+     * - Attempts to register the user using the User model.
+     * - Redirects to login on success, or reloads the registration page with an error on failure.
+     */
     public function store()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {

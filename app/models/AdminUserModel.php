@@ -1,6 +1,8 @@
 <?php
 class AdminUserModel extends Model
 {
+    //adminUserModel class for managing user data in the database
+    //retrieves all users, deactivates a user, and deletes a user from the database.
     public function getAllUsers()
     {
         $stmt = $this->db->query("SELECT * FROM users");

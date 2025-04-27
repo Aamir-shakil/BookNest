@@ -33,7 +33,7 @@
                 </li>
             <?php endforeach; ?>
         </ul>
-
+        <!-- If user is loggged in show review form -->
         <?php if (isset($_SESSION['user_id'])): ?>
             <form method="POST" action="/reviews/add">
                 <input type="hidden" name="book_id" value="<?= $data['book']['id'] ?>">

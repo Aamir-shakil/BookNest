@@ -1,6 +1,8 @@
 <?php
 class AdminBookModel extends Model
 {
+    //adminBookModel class for managing book data in the database
+    // This class extends the base Model class to inherit database connection functionality.
     public function getAllBooks()
     {
         $stmt = $this->db->query("SELECT * FROM books");

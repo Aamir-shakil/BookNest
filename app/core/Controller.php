@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * Base Controller class
+ * 
+ * Provides methods to load models and views.
+ * All application controllers should extend this class.
+ */
 class Controller
 {
     // Load a model

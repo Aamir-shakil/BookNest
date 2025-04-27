@@ -1,4 +1,5 @@
 <?php
+// Retrieve the cart items data passed from the controller
 $cartItems = $data['cartItems']; 
 ?>
 <!DOCTYPE html>

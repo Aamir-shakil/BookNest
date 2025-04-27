@@ -1,6 +1,7 @@
 <?php
 
-
+//model class for user management
+//retrieves all users, finds a user by email, logs in a user, registers a new user, and sets the active status of a user.
 class User extends Model
 {
     public function getAllUsers()

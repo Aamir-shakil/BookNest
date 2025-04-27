@@ -80,6 +80,9 @@
     </div>
 
     <script>
+        // Simple JavaScript to handle the modal popup
+        //sets the input values in the modal to the current book values
+        // update the action of the form to the edit URL for the specific book
         function openEditModal(id, title, author, price) {
             document.getElementById('edit-title').value = title;
             document.getElementById('edit-author').value = author;
