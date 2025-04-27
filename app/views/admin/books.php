@@ -7,28 +7,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <style>
         /* Simple Modal Styling */
-        #editBookModal {
-            display: none;
-            position: fixed;
-            top: 20%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #fff;
-            padding: 20px;
-            border: 1px solid #ccc;
-            z-index: 9999;
-        }
-
-        #editBookModal input {
-            display: block;
-            margin-bottom: 10px;
-            width: 100%;
-            padding: 5px;
-        }
-
-        #editBookModal button {
-            margin-right: 10px;
-        }
+       
     </style>
 </head>
 
@@ -41,9 +20,14 @@
     ?>
     <div class="container">
         <form action="/admin/addBook" method="POST">
-            <input name="title" placeholder="Title" required>
-            <input name="author" placeholder="Author" required>
-            <input name="price" placeholder="Price" type="number" step="0.01" required>
+            <label for="title">Title:</label>
+            <input id="title" name="title" placeholder="Title" required>
+
+            <label for="author">Author:</label>
+            <input id="author" name="author" placeholder="Author" required>
+
+            <label for="price">Price:</label>
+            <input id="price" name="price" placeholder="Price" type="number" step="0.01" required>
             <button type="submit">➕ Add Book</button>
         </form>
     </div>
@@ -82,8 +66,13 @@
     <div id="editBookModal">
         <h2>Edit Book</h2>
         <form id="editBookForm" method="POST">
+            <label for="edit-title">Title:</label>
             <input type="text" name="title" id="edit-title" placeholder="Title" required>
+
+            <label for="edit-author">Author:</label>
             <input type="text" name="author" id="edit-author" placeholder="Author" required>
+
+            <label for="edit-price">Price:</label>
             <input type="number" step="0.01" name="price" id="edit-price" placeholder="Price" required>
             <button type="submit">💾 Save Changes</button>
             <button type="button" onclick="closeModal()">❌ Cancel</button>

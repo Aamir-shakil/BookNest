@@ -37,8 +37,11 @@
         <?php if (isset($_SESSION['user_id'])): ?>
             <form method="POST" action="/reviews/add">
                 <input type="hidden" name="book_id" value="<?= $data['book']['id'] ?>">
-                <textarea name="review_text" placeholder="Leave a review..." required></textarea>
-                <select name="rating">
+                <label for="review_text">Your Review:</label>
+                <textarea id="review_text" name="review_text" placeholder="Leave a review..." required></textarea>
+
+                <label for="rating">Rating:</label>
+                <select id="rating" name="rating">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>

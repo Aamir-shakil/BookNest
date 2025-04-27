@@ -130,6 +130,29 @@ form button:hover {
     color: #111111; /* Very dark text for price */
 }
 
+#editBookModal {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    z-index: 9999;
+}
+
+#editBookModal input {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 5px;
+}
+
+#editBookModal button {
+    margin-right: 10px;
+}
+
 
 
 
